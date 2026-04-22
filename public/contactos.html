@@ -6,6 +6,8 @@
     <title>Contactos - Mi Sitio Web</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../src/styles/style.css">
 </head>
@@ -46,6 +48,142 @@
                 <div class="alert alert-info" role="alert">
                     <p>La información de contacto en esta página aún está siendo desarrollada. Pronto tendremos contenido disponible.</p>
                 </div>
+
+                <!-- Tarjetas de información -->
+                <div class="row mb-4">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-geo-alt-fill me-2 text-primary"></i>Dirección</h5>
+                                <p class="card-text text-muted">Calle 123 #45-67<br>Bogotá, Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-telephone-fill me-2 text-primary"></i>Teléfono</h5>
+                                <p class="card-text text-muted">
+                                    <a href="tel:+576011234567" class="text-decoration-none text-muted">+57 601 123 4567</a><br>
+                                    <a href="tel:+573001234567" class="text-decoration-none text-muted">+57 300 123 4567</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-envelope-fill me-2 text-primary"></i>Correo</h5>
+                                <p class="card-text text-muted">
+                                    <a href="mailto:hola@misitio.com" class="text-decoration-none text-muted">hola@misitio.com</a><br>
+                                    <a href="mailto:soporte@misitio.com" class="text-decoration-none text-muted">soporte@misitio.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario + Lateral -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 class="mb-3">Envíanos un mensaje</h2>
+                        <form id="contactForm" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+                                    <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="apellido" class="form-label">Apellido <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="apellido" placeholder="Tu apellido" required>
+                                    <div class="invalid-feedback">Por favor ingresa tu apellido.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
+                                    <div class="invalid-feedback">Ingresa un correo válido.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefono" class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" id="telefono" placeholder="+57 300 000 0000">
+                                </div>
+                                <div class="col-12">
+                                    <label for="asunto" class="form-label">Asunto <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="asunto" required>
+                                        <option value="" disabled selected>Selecciona un tema</option>
+                                        <option value="info">Información general</option>
+                                        <option value="soporte">Soporte técnico</option>
+                                        <option value="ventas">Ventas y precios</option>
+                                        <option value="alianza">Alianzas y colaboraciones</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecciona un asunto.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="mensaje" class="form-label">Mensaje <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
+                                    <div class="invalid-feedback">Por favor escribe tu mensaje.</div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="privacidad" required>
+                                        <label class="form-check-label" for="privacidad">
+                                            Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos. <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="invalid-feedback">Debes aceptar la política de privacidad.</div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-send-fill me-2"></i>Enviar mensaje
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="successAlert" class="alert alert-success mt-3 d-none" role="alert">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            ¡Mensaje enviado con éxito! Te contactaremos pronto.
+                        </div>
+                    </div>
+
+                    <!-- Columna lateral -->
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-clock-fill me-2 text-primary"></i>Horario de atención</h5>
+                                <ul class="list-unstyled text-muted mb-0">
+                                    <li class="d-flex justify-content-between py-1 border-bottom">
+                                        <span>Lun – Vie</span><span>8:00 am – 6:00 pm</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1 border-bottom">
+                                        <span>Sábado</span><span>9:00 am – 1:00 pm</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between py-1">
+                                        <span>Domingo</span><span>Cerrado</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-share-fill me-2 text-primary"></i>Redes sociales</h5>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-instagram me-1"></i>Instagram</a>
+                                    <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-facebook me-1"></i>Facebook</a>
+                                    <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
+                                    <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="alert alert-info" role="alert">
+                    <p>Esta es un modulo de contactos</p>
+                </div>
             </div>
         </section>
     </main>
@@ -62,5 +200,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="../src/scripts/script.js"></script>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!form.checkValidity()) {
+                e.stopPropagation();
+                form.classList.add('was-validated');
+                return;
+            }
+            form.reset();
+            form.classList.remove('was-validated');
+            document.getElementById('successAlert').classList.remove('d-none');
+        });
+    </script>
 </body>
 </html>
